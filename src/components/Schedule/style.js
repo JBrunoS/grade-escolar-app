@@ -1,9 +1,10 @@
 import styled from 'styled-components/native'
 
 export const Picker = styled.Picker `
-    margin-top: 20px;
+    margin-top: 10px;
     width: 80%;
     align-self: center;
+    
 `
 
 export const Agenda = styled.View `
@@ -11,7 +12,9 @@ export const Agenda = styled.View `
     align-items: center;
     margin: 5px auto 5px;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 8px;
+    border-bottom-width: 5px;
+    border-bottom-color: #337ed4;
     background-color: #ece8e8;
 `
 
@@ -39,7 +42,7 @@ export const Obs = styled.TouchableOpacity `
 
 export const TextObs = styled.Text `
     margin: 3px;
-    color: #337ec6;
+    color: #337ed4;
     font-size: 15px;
 `
 

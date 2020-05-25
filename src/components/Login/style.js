@@ -18,7 +18,7 @@ export const Image = styled.Image `
 
 export const TextLogin = styled.Text `
     
-    font-size: 25px;
+    font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
 `

@@ -21,10 +21,10 @@ export default function Header(){
         const jsonValue = await AsyncStorage.getItem('storage')
         const data = JSON.parse(jsonValue)
         
-        setNome(data != null ? data.nome : '')
-        setEmail(data != null ? data.email : '')
+        setNome(data ? data.nome : '')
+        setEmail(data ? data.email : '')
         
-        if(data == null ){
+        if(!data){
             navigate.navigate('login')
             setNome('')
             setEmail('')

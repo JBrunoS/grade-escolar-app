@@ -4,7 +4,6 @@ import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-community/async-storage'
 import Icon from 'react-native-vector-icons/Feather'
 
-import Header from '../../pages/'
 import api from '../../services/api'
 
 import {Picker, Agenda, Turma, Disciplina, Horario, Obs, TextObs} from './style'
@@ -24,7 +23,18 @@ export default function Schedule(){
 
     useEffect(() => {
         loadIncidents();
+        
     }, [dia]);
+
+    async function getData(){
+        const jsonValue = await AsyncStorage.getItem('storage')
+        const data = JSON.parse(jsonValue)
+        
+        
+        if(!data){
+            navigate.navigate('login')
+        }
+    }
 
     async function loadIncidents(){
         const jsonValue = await AsyncStorage.getItem('storage')
@@ -91,7 +101,7 @@ export default function Schedule(){
 
     return(
         <View>
-            <Header />
+            
             <Picker
                 selectedValue={dia}
                 onValueChange={(itemValue, itemIndex) => setDia(itemValue)}
@@ -107,7 +117,7 @@ export default function Schedule(){
             
 
             <FlatList
-                style={{ marginTop: 10, marginBottom: 150}}
+                style={{ marginTop: 5, marginBottom: 80}}
                 data={incidents}
                 keyExtractor={incident => String(incident.id)}
                 renderItem={({item: incident}) => (

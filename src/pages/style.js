@@ -15,7 +15,8 @@ export const Image = styled.Image `
 
 
 export const HeaderText = styled.View `
-    margin-right: 35%;
+    
+    width: 70%;
 `
 
 export const Name = styled.Text `

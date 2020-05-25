@@ -22,7 +22,7 @@ export default function Login(){
 
             await AsyncStorage.setItem('storage', JSON.stringify(response.data));
 
-            navigate.navigate('schedule');
+            navigate.navigate('home');
             
         } catch (error) {
             alert('Dados informados não conferem');
@@ -34,7 +34,7 @@ export default function Login(){
         <Container>
             <Header>
                 <Image source={logo} />
-                <TextLogin>Ajuda na grade</TextLogin>
+                <TextLogin>Ajuda na grade - Professor</TextLogin>
             </Header>
             
             <Email placeholder='E-mail' keyboardType='email-address' value={email} onChangeText={text => setEmail(text)} />
